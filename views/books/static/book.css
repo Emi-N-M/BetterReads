@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    background-color: #333;
+    color: #fff;
+    flex: 0 0 250px;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .sidebar a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .sidebar a:hover{
+    background-color: #555;
+  }
+
+  .main-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 250px;
+  }
+  .row-book{
+    display: flex;
+    flex-direction: row;
+
+  }
+  .reviews{
+    padding-top: 20px
+
+  }
+
+  .add-review{
+    height: 25px;
+    margin-left: 10px;
+    background-color:rgb(1, 180, 240);
+    color: white;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding-inline: 10px;
+    border-width: 0px;
+    margin-top: 18px;
+
+  }
+  
+ .floating {
+  position: absolute;
+  display:inline;
+  width: 700px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 20px;
+
+ }
+.review-div{
+  border-radius: 10px;
+  padding-inline: 20px;
+  margin-top: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  max-width: 400px;
+
+}
+
+.owner-review-div{
+  border-radius: 10px;
+  padding-inline: 20px;
+  background-color: aquamarine;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  max-width: 400px;
+
+}
+ .input-container {
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.submit-button {
+  background-color:rgb(1, 180, 240);
+    color: white;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 10px;
+    border-width: 0px;
+}
+  .books {
+    display:flex;
+    padding-bottom: 40px;
+  }
+  .book-cover {
+    max-width: 200px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .book-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .reviews-h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .book-author {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #888;
+  }
+
+  .book-description {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .book-pages {
+    font-weight: bold;
+    color: #555;
+  }

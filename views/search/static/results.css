@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    background-color: #333;
+    color: #fff;
+    flex: 0 0 250px;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+  }
+
+  .sidebar a:hover {
+    background-color: #555;
+  }
+
+  .main-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 250px;
+  }
+
+ 
+  .books {
+    display:flex;
+    padding-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    align-self: center;
+    max-width: 600px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: beige;
+  }
+
+  .books:hover{
+    background-color: rgb(220, 240, 245);
+  }
+
+  .books-columm {
+    display:inline;
+  }
+
+  .book-button {
+    background-color:rgb(1, 180, 240);
+    color: white;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 10px;
+    border-width: 0px;
+    
+  }

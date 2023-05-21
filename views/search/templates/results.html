@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="./static/results.css" />
+
+  </head>
+  <body>
+
+
+    <div class="container">
+      <div class="sidebar">
+        <h2>BetterReads</h2>
+        <a href="/home">Inicio</a>
+        <a href="/profile">Perfil</a>
+        <a href="/logout">Salir</a>
+      </div>
+      <div class="main-content">
+       
+    <h1>Resultados</h1>
+    {% if books %}
+    <ul>
+      {% for book in books %}
+      <div class="books" onclick="window.location='/book?bookId={{ book.bookId }}'">
+        <img src={{ book.imgSrc }}  width="108" height="182">
+        <div class="books-columm">
+
+          <h3 style="padding-left: 10px;">{{ book.title }}</h3>
+
+        </div>
+       
+
+      </div>
+      
+      {% endfor %}
+    </ul>
+    {% endif %}
+      </div>
+    </div>
+
+    
+  </body>
+</html>

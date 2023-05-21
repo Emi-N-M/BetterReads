@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Mi perfil</title>
+    <link rel="stylesheet" type="text/css" href="./static/styles.css">
+
+</head>
+<body>
+	<div class="container">
+		<div class="sidebar">
+			<h2>BetterReads</h2>
+			<a href="/home">Inicio</a>
+			<a href="#">Perfil</a>
+			<a href="/logout">Salir</a>
+		</div>
+		<div class="main-content">
+			<h1>Mi perfil</h1>
+			<div class="profile-image">
+				<img src="https://icons-for-free.com/iconfiles/png/512/reading-131964753179295908.png" height="200" width="200">
+			</div>
+			<div class="user-info">
+				<p><strong>Nombre:</strong> {{ usr.name }}</p>
+				<p><strong>Email:</strong> {{ usr.email }}</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

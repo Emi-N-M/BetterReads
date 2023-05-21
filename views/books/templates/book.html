@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Información de un libro</title>
+    <link rel="stylesheet" type="text/css" href="./static/book.css" />
+    <script>
+    
+
+    function toggleVisibility() {
+        var floating = document.getElementById("floating-div");
+
+        if (floating.style.display == "none") {
+        floating.style.display = "inline";
+          
+        } else {
+        floating.style.display = "none";
+          
+        }
+
+
+
+      }
+
+      function toggleVisibilityUpdate(ratingFlask, contentFlask) {
+        var element = document.getElementById("floating-div");
+        var rating = document.getElementById("rating");
+        var content = document.getElementById("content");
+
+
+          element.style.display = "inline";
+          content.textContent = contentFlask
+          rating.value = parseInt(ratingFlask)
+
+      }
+
+      
+    </script>
+  </head>
+  <body id="body">
+    <div class="container">
+      <div class="sidebar">
+        <h2>BetterReads</h2>
+        <a onclick="history.back()" >Volver al listado</a>
+        <a href="/home">Inicio</a>
+        <a href="/profile">Perfil</a>
+        <a href="/logout">Salir</a>
+      </div>
+      <div class="main-content">
+        <div class="row-book">
+          <div >
+            <img
+              src="{{ book.imgSrc }}"
+              class="book-cover"
+              height="240px"
+              width="140px"
+            />
+          </div>
+          <div>
+            <h1 class="book-title">{{ book.title }}</h1>
+            <p class="book-author">{{ book.authors }}</p>
+            <p class="book-description">{{ book.description }}</p>
+            <p class="book-pages">Número de páginas: {{ book.pageCount }}</p>
+          </div>
+        </div>
+        <div class="reviews">
+         <div class="row-book">
+          <h1 class="reviews-h1">Reseñas</h1>
+          {% if not has_reviewed %}
+
+          <button onclick="toggleVisibility()" class="add-review" >Añadir reseña</button>
+          {% else %}
+          <h4 style="padding-left: 20px;">Has valorado este libro!</h4>
+          {% endif %}
+
+         </div>
+
+
+         <div class="floating" id="floating-div" style="display:none;">
+          <form action="/book/save_review" method="post">
+            <input type="text" id="bookId" name="bookId" hidden value="{{ book.bookId }}">
+            <div class="input-container">
+              <label style="color: white;" for="rating">Valoración:</label>
+              <input type="number" id="rating" name="rating" min="1" max="5" required>
+            </div>
+            <div class="input-container">
+              <label style="color: white;" for="content">Explicación:</label>
+              <textarea id="content" name="content" rows="4" required></textarea>
+            </div>
+              <button class="submit-button" type="submit">Enviar</button>
+              <button class="submit-button" style="background-color: rgb(252, 98, 98);" type="button" onclick="toggleVisibility()">Cancelar</button>
+          </form>
+          
+         </div>
+
+
+         <div id="book-reviews">
+          {% if reviews %}
+          <p><ul>
+                  {% for review in reviews %}
+                    {% if review.owner_email == usr.email %}
+                    <div class="owner-review-div" onclick="toggleVisibilityUpdate('{{ review.rating }}', '{{ review.content }}')">
+                      <p style="font-size: large; font-weight: 600;">{{ review.getTitle() }}</p>
+                      <p style="font-size: medium; font-weight: 400;">{{ review.getContent() }}</p>
+                    </div>
+
+                    {% else %}
+
+                  <div class="review-div">
+                    <p style="font-size: large; font-weight: 600;">{{ review.getTitle() }}</p>
+                      <p style="font-size: medium; font-weight: 400;">{{ review.getContent() }}</p>
+                  </div>
+                    {% endif %}
+
+                  {% endfor %}
+              </ul></p>
+          {% else %}
+          <p style="opacity: 70%; font-size:large; ">Parece que aún no hay reseñas para este libro...</p>
+          {% endif %}
+      </div>
+      </div>
+
+     
+
+      </div>
+    </div>
+  </body>
+</html>
